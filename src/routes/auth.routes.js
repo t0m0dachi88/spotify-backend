@@ -1,9 +1,7 @@
 const express=require('express');
 
 const router=express.Router();
-
-router.post('/api/register',(req,res)=>{
-    res.send("User registered successfully");
-});
-
+const authController=require('../controllers/auth.controller');
+router.post('/register',authController.registerUser);
+router.post('/login',authController.loginUser);
 module.exports=router;
